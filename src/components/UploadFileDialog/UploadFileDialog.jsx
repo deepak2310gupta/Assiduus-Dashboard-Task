@@ -74,6 +74,7 @@ export default function UploadFileDialog({ open, setOpen, dialogTitle }) {
                       style={{ maxWidth: "100px" }}
                     />
                   ) : (
+                    // eslint-disable-next-line jsx-a11y/alt-text
                     <object
                       data={file.preview}
                       style={{ height: "100px", width: "auto" }}
