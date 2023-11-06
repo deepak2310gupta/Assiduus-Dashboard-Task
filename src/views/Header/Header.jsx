@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, Badge, IconButton } from "@mui/material";
-import { Notifications } from "@material-ui/icons";
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import Searchbar from "../../components/Searchbar/Searchbar";
 import avatar from "../../assets/avatar.jpg";
 import "./Header.css";
@@ -14,7 +14,7 @@ export default function Header() {
       <div className="header-subwrapper">
         <IconButton color="inherit">
           <Badge variant="dot" color="secondary">
-            <Notifications />
+          <NotificationsIcon/>
           </Badge>
         </IconButton>
         <IconButton edge="end" color="inherit">

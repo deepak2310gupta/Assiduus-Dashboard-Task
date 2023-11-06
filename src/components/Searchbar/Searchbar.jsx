@@ -1,6 +1,6 @@
 import React from "react";
-import SearchIcon from "@material-ui/icons/Search";
 import { InputBase } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 import "./Searchbar.css";
 
 export default function Searchbar() {
