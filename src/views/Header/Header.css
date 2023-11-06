@@ -1,0 +1,14 @@
+.header-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .header-subwrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  

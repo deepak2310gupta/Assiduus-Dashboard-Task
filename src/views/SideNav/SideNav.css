@@ -1,0 +1,39 @@
+.top-section {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .nav-item {
+    margin-top: 10px;
+    padding: 10px 35px;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .nav-item.active {
+    background-color: #4800f0;
+    color: white;
+  }
+  
+  .dflex {
+    display: flex;
+    align-items: center;
+  }
+  

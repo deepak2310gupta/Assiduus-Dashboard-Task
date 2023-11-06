@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .topComponent {
+    height: 10%;
+  }
+  
+  .bottomComponent {
+    height: 90%;
+  }
+  

@@ -1,0 +1,44 @@
+.graph-content {
+    flex-grow: 1;
+    padding: 10px 25px;
+    overflow: auto;
+    background-color: #f6f6f9;
+  }
+  
+  .filter {
+    background-color: #e82154;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  
+  .grid {
+    display: flex;
+  }
+  
+  .card {
+    flex: 1;
+    box-shadow: none !important;
+    border-radius: 10px !important;
+  }
+  
+  .theader {
+    border: none !important;
+    padding: 8px !important;
+    color: #c4c7c9 !important;
+    font-family: "Work Sans", sans-serif !important;
+  }
+  
+  .tbody {
+    border: none !important;
+    padding: 8px !important;
+    font-family: "Work Sans", sans-serif !important;
+    font-weight: bolder;
+  }
+  
