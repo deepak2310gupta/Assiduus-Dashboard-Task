@@ -6,6 +6,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import calendar from "../../../../assets/calendar.png"
 import "./CheckingAccount.css";
 
 export default function CheckingAccountView() {
@@ -74,6 +75,7 @@ export default function CheckingAccountView() {
                     label="Start Date"
                     value={startDate}
                     onChange={(newValue) => setStartDate(newValue)}
+                    disableFuture
                     className="customDatePickerInput"
                   />
                 </DemoContainer>
@@ -83,6 +85,7 @@ export default function CheckingAccountView() {
                   <DesktopDatePicker
                     label="End Date"
                     value={endDate}
+                    disableFuture
                     onChange={(newValue) => setEndDate(newValue)}
                     className="customDatePickerInput"
                   />
@@ -97,7 +100,15 @@ export default function CheckingAccountView() {
           isLoading ? (
             <p>Loading....</p>
           ) : (
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection:"column",
+              justifyContent:"center"
+            }}>
             <p>Please select the start and end dates</p>
+            <img src={calendar} style={{width:"50px",height:"50px"}} alt="Calendar"/>
+            </div>
           )
         ) : (
           <CurveLineChart
