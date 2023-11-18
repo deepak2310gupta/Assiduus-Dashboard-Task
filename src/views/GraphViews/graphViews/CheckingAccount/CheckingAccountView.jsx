@@ -5,7 +5,7 @@ import GraphCardHeader from "../../../../components/GraphCardHeader/GraphCardHea
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import "./CheckingAccount.css";
 
 export default function CheckingAccountView() {
@@ -61,22 +61,30 @@ export default function CheckingAccountView() {
         <GraphCardHeader
           leftSectionText={"Checking account"}
           rightSection={
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "15px",
+              }}
+            >
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={["DateRangePicker"]}>
-                  <DatePicker
+                  <DesktopDatePicker
                     label="Start Date"
                     value={startDate}
                     onChange={(newValue) => setStartDate(newValue)}
+                    className="customDatePickerInput"
                   />
                 </DemoContainer>
               </LocalizationProvider>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={["DateRangePicker"]}>
-                  <DatePicker
+                  <DesktopDatePicker
                     label="End Date"
                     value={endDate}
                     onChange={(newValue) => setEndDate(newValue)}
+                    className="customDatePickerInput"
                   />
                 </DemoContainer>
               </LocalizationProvider>

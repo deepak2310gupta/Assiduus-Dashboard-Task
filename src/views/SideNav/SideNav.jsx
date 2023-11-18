@@ -16,7 +16,7 @@ export default function SideNav({ logo }) {
     <div className="side-navbar">
       <div className="top-section">
         <img src={logo} alt="logo" className="logo" />
-        <h2 className="org-name">Equity</h2>
+        <h2 className="org-name">ASSIDUUS</h2>
       </div>
       <div className="bottom-section">
         {SIDENAV_MENU_ITEMS?.map((menuItem) => (

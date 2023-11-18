@@ -50,7 +50,7 @@ export default function BarChart({ width, height, data }) {
       .attr("rx", 5)
       .attr("ry", 5)
       .transition()
-      .attr("fill", "#4800f0")
+      .attr("fill", "#47b747")
       .attr("height", (d) => svgHeight - yScale(d.value) - paddingBottom);
   }, [data, svgHeight, svgWidth]);
 

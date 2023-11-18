@@ -1,12 +1,23 @@
 .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-    border-color: #c4c7c9 !important;
-    border-radius: 8px !important;
-  }
-  
-  .MuiSelect-select {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-    padding-left: 10px !important;
-    padding-right: 35px !important;
-  }
-  
+  border-color: #c4c7c9 !important;
+  border-radius: 8px !important;
+}
+
+.MuiSelect-select {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  padding-left: 10px !important;
+  padding-right: 35px !important;
+}
+
+.MuiStack-root {
+  padding-top: 5px !important;
+}
+
+.customDatePickerInput {
+  padding: 0px 6px !important;
+}
+
+.customDatePickerInput input {
+  padding: 10px;
+}
