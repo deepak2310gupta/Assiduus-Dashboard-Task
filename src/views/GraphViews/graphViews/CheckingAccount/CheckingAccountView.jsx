@@ -6,7 +6,9 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import calendar from "../../../../assets/calendar.png"
+import calendar from "../../../../assets/calendar.png";
+import CircularProgress from '@mui/material/CircularProgress';
+import dayjs from "dayjs";
 import "./CheckingAccount.css";
 
 export default function CheckingAccountView() {
@@ -15,6 +17,8 @@ export default function CheckingAccountView() {
   const [graphData, setGraphData] = useState([]);
   const [curvedLineData, setCurvedLineData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const minDate = dayjs("2019-01-01");
+  const maxDate = dayjs("2021-12-31");
 
   const checkValidDate = (date, sDate, eDate) => {
     const givenDate = new Date(date);
@@ -75,8 +79,10 @@ export default function CheckingAccountView() {
                     label="Start Date"
                     value={startDate}
                     onChange={(newValue) => setStartDate(newValue)}
-                    disableFuture
                     className="customDatePickerInput"
+                    disableFuture
+                    minDate={minDate}
+                    maxDate={maxDate}
                   />
                 </DemoContainer>
               </LocalizationProvider>
@@ -85,9 +91,11 @@ export default function CheckingAccountView() {
                   <DesktopDatePicker
                     label="End Date"
                     value={endDate}
-                    disableFuture
                     onChange={(newValue) => setEndDate(newValue)}
                     className="customDatePickerInput"
+                    disableFuture
+                    minDate={minDate}
+                    maxDate={maxDate}
                   />
                 </DemoContainer>
               </LocalizationProvider>
@@ -96,28 +104,41 @@ export default function CheckingAccountView() {
         />
       }
       BottomComponent={
-        !startDate && !endDate && curvedLineData?.length === 0 ? (
-          isLoading ? (
-            <p>Loading....</p>
-          ) : (
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              flexDirection:"column",
-              justifyContent:"center"
-            }}>
-            <p>Please select the start and end dates</p>
-            <img src={calendar} style={{width:"50px",height:"50px"}} alt="Calendar"/>
-            </div>
-          )
-        ) : (
-          <CurveLineChart
-            width={600}
-            height={200}
-            filteredGraphData={curvedLineData}
-          />
-        )
+        isLoading ? <LoadingData /> : !startDate || !endDate || curvedLineData?.length === 0 ? <SelectDate /> : <CurveLineChart
+          width={600}
+          height={200}
+          filteredGraphData={curvedLineData}
+        />
       }
     />
+  );
+}
+
+
+const SelectDate = () => {
+  return (
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "column",
+      justifyContent: "center"
+    }}>
+      <p>Please select the start and end dates</p>
+      <img src={calendar} style={{ width: "50px", height: "50px" }} alt="Calendar" />
+    </div>
+
+  )
+}
+
+const LoadingData = () => {
+  return (
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "column",
+      justifyContent: "center"
+    }}>
+      <CircularProgress color="success" />
+    </div>
   );
 }
